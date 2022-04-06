@@ -14,4 +14,4 @@ const tokenSchema = new Schema(
 
 const Token = mongoose.model("Token", tokenSchema);
 
-module.exports = Token;
+export default Token;
