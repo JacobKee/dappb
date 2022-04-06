@@ -20,4 +20,4 @@ router.route("/add").post((req, res) => {
     .catch((err) => res.status(400).json("Error: " + err));
 });
 
-module.exports = router;
+export default router;

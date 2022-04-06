@@ -101,4 +101,4 @@ const sortArray = (array) => {
   return array;
 };
 
-module.exports = router;
+export default router;
