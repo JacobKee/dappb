@@ -1,5 +1,5 @@
 const router = require("express").Router();
-let fetch = require("node-fetch");
+var fetch = require("node-fetch");
 var Web3 = require("web3");
 var _myAddress = "0x8966aAb17B17abb0Cd216f7Db59a0cEe9E9fc191";
 
