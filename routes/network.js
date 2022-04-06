@@ -1,5 +1,6 @@
-const router = require("express").Router();
-let Network = require("../models/network.models");
+import express from "express";
+const router = express.Router();
+import Network from "../models/network.models";
 
 router.route("/").get((req, res) => {
   Network.find()

@@ -1,9 +1,10 @@
-const router = require("express").Router();
+import express from "express";
+const router = express.Router();
 import fetch from "node-fetch";
-var Web3 = require("web3");
+import Web3 from "web3";
 var _myAddress = "0x8966aAb17B17abb0Cd216f7Db59a0cEe9E9fc191";
 
-require("dotenv").config();
+import "dotenv/config";
 var _tokens = [];
 
 const ABIJson = [
@@ -97,7 +98,7 @@ const sortArray = (array) => {
     }
     return 0;
   });
-  return array
-}
+  return array;
+};
 
 module.exports = router;

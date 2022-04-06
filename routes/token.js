@@ -1,6 +1,7 @@
-const router = require("express").Router();
-let Token = require("../models/token.models");
-let Network = require("../models/network.models");
+import express from "express";
+const router = express.Router();
+import Token from "../models/token.models";
+import Network from "../models/network.models";
 
 router.route("/").get((req, res) => {
   Token.find()
@@ -21,7 +22,5 @@ router.route("/add").post((req, res) => {
     .then(() => res.json("Token added!"))
     .catch((err) => res.status(400).json("Error: " + err));
 });
-
-
 
 module.exports = router;
