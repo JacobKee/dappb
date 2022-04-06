@@ -1,6 +1,6 @@
 import express from "express";
 const router = express.Router();
-import Network from "../models/network.models";
+import Network from "../models/network.models.js";
 
 router.route("/").get((req, res) => {
   Network.find()
