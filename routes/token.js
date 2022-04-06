@@ -1,7 +1,7 @@
 import express from "express";
 const router = express.Router();
-import {Token} from "../models/token.models.js";
-import {Network} from "../models/network.models.js";
+import * as Token from "../models/token.models.js";
+import * as Network from "../models/network.models.js";
 
 router.route("/").get((req, res) => {
   Token.find()
