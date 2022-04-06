@@ -1,4 +1,4 @@
-import mongoose from "mongoose";
+const mongoose = require("mongoose");
 const Schema = mongoose.Schema;
 
 const networkSchema = new Schema(
@@ -14,4 +14,4 @@ const networkSchema = new Schema(
 
 const Network = mongoose.model("Network", networkSchema);
 
-export default Network;
+module.exports = Network;

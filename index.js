@@ -1,11 +1,11 @@
-import express from "express";
-import cors from "cors";
-import mongoose from "mongoose";
+const express = require("express");
+const cors = require("cors");
+const mongoose = require("mongoose");
 
-import "dotenv/config";
+require("dotenv").config();
 
 const app = express();
-const port = process.env.PORT || 8888;
+const port = 8888;
 
 app.use(cors());
 app.use(express.json());
@@ -20,9 +20,9 @@ connection.once("open", () => {
 
 app.get("/", (req, res) => res.send("Hello World"));
 
-import * as networkRouter from "./routes/network.js";
-import * as tokenRouter from "./routes/token.js";
-import * as web3Router from "./routes/web3.js";
+const networkRouter = require("./routes/network");
+const tokenRouter = require("./routes/token");
+const web3Router = require("./routes/web3");
 
 app.use("/network", networkRouter);
 app.use("/token", tokenRouter);

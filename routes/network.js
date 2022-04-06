@@ -1,6 +1,5 @@
-import express from "express";
-const router = express.Router();
-import * as Network from "../models/network.models.js";
+const router = require("express").Router();
+let Network = require("../models/network.models");
 
 router.route("/").get((req, res) => {
   Network.find()
@@ -20,4 +19,4 @@ router.route("/add").post((req, res) => {
     .catch((err) => res.status(400).json("Error: " + err));
 });
 
-export default router;
+module.exports = router;
