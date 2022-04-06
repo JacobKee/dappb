@@ -20,9 +20,9 @@ connection.once("open", () => {
 
 app.get("/", (req, res) => res.send("Hello World"));
 
-const networkRouter = require("./routes/network");
-const tokenRouter = require("./routes/token");
-const web3Router = require("./routes/web3");
+import networkRouter from "./routes/network";
+import tokenRouter from "./routes/token";
+import web3Router from "./routes/web3";
 
 app.use("/network", networkRouter);
 app.use("/token", tokenRouter);
