@@ -4,7 +4,6 @@ var Web3 = require("web3");
 var _myAddress = "0x8966aAb17B17abb0Cd216f7Db59a0cEe9E9fc191";
 const url = require("../common");
 
-console.log(url);
 
 require("dotenv").config();
 var _tokens = [];
@@ -21,7 +20,7 @@ const ABIJson = [
   },
 ];
 const getNetwork = async () => {
-  return await fetch("http://localhost:8888/network")
+  return await fetch(`${url}/network`)
     .then((res) => res.json())
     .then((result) => {
       return result;
@@ -30,7 +29,7 @@ const getNetwork = async () => {
 };
 
 const getToken = async () => {
-  return await fetch("http://localhost:8888/token")
+  return await fetch(`${url}/token`)
     .then((res) => res.json())
     .then((result) => {
       return result;
@@ -39,6 +38,7 @@ const getToken = async () => {
 };
 
 router.route("/").get((req, res) => {
+console.log(url);
   var array = [];
   try {
     getNetwork()

@@ -1,3 +1,3 @@
-const url = "https://dappb.herokuapp.com/"
+const url = "https://dappb.herokuapp.com"
 
 module.exports = url;
