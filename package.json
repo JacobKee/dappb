@@ -2,10 +2,14 @@
     "name": "dappb",
     "version": "1.0.0",
     "description": "",
-    "exports": "./index.js",
+    "main": "index.js",
     "scripts": {
-        "test": "echo \"Error: no test specified\" && exit 1",
-        "start": "node index.js"
+        "dev": "react-scripts start",
+        "start": "serve -s build",
+        "build": "react-scripts build",
+        "test": "react-scripts test --env=jsdom",
+        "eject": "react-scripts eject",
+        "heroku-postbuild": "npm run build"
     },
     "repository": {
         "type": "git",
@@ -26,6 +30,6 @@
         "web3": "^1.7.1"
     },
     "engines": {
-        "node": "16.14"
+        "node": "16.14.2"
     }
 }
