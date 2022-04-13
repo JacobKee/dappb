@@ -11,13 +11,12 @@ var _tokens = [];
 const ABIJson = [
   {
     constant: true,
-    name: "bnb",
     inputs: [{ internalType: "address", name: "_owner", type: "address" }],
     name: "balanceOf",
     outputs: [{ internalType: "uint256", name: "balance", type: "uint256" }],
     payable: false,
     type: "function",
-  },
+  }
 ];
 const getNetwork = async () => {
   return await fetch(`${url}/network`)
@@ -38,7 +37,6 @@ const getToken = async () => {
 };
 
 router.route("/").get((req, res) => {
-console.log(url);
   var array = [];
   try {
     getNetwork()
@@ -46,9 +44,8 @@ console.log(url);
         for (let network of networks) {
           var web3 = new Web3(network.url);
           var balance = await web3.eth.getBalance(_myAddress);
-          web3.utils.fromWei(balance, "ether");
           array.push({
-            balance: web3.utils.fromWei(balance, "ether"),
+            balance: web3.utils.fromWei(balance),
             name: network.token,
             chain: network.name,
             main: true,
@@ -62,7 +59,7 @@ console.log(url);
             const contract = new web3.eth.Contract(ABIJson, token.address);
             var balance = await contract.methods.balanceOf(_myAddress).call();
             array.push({
-              balance: web3.utils.fromWei(balance, "ether"),
+              balance: web3.utils.fromWei(balance),
               name: token.name,
               chain: token.chain_id.name,
               main: false,
